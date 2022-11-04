@@ -22,6 +22,11 @@ class SignInActivity : AppCompatActivity() {
             startActivity(intSignUpNoAccount)
         }
 
+        binding.forgotPassword.setOnClickListener() {
+            val intForgotPassword = Intent(this, ForgotPasswordActivity::class.java)
+            startActivity(intForgotPassword)
+        }
+
         firebaseAuth = FirebaseAuth.getInstance()
         binding.signInAccount.setOnClickListener() {
             val email = binding.email.text.toString()
