@@ -22,15 +22,11 @@
             android:name=".UserActivity"
             android:exported="false" />
         <activity
-            android:name=".SecondActivity"
-            android:exported="false" />
-        <activity
             android:name=".SignInActivity"
             android:exported="false" />
         <activity
             android:name=".SignUpActivity"
             android:exported="false" />
-        <activity android:name=".MainActivity" />
         <activity
             android:name=".SplashScreen"
             android:exported="true">

@@ -52,7 +52,7 @@ class SignInActivity : AppCompatActivity() {
                 }
             }
             else {
-                Toast.makeText(this, "Empty Fields Are Not Allowed", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Заполните поля", Toast.LENGTH_SHORT).show()
             }
         }
     }

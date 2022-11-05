@@ -9,7 +9,7 @@
         android:id = "@+id/SplashScreenImage"
         android:layout_width = "300dp"
         android:layout_height = "wrap_content"
-        android:src = "@drawable/car"
+        android:src = "@drawable/logo"
         android:adjustViewBounds="true"
         app:layout_constraintBottom_toBottomOf = "parent"
         app:layout_constraintLeft_toLeftOf = "parent"
