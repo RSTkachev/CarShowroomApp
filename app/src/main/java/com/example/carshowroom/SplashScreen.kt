@@ -20,6 +20,6 @@ class SplashScreen : AppCompatActivity() {
     }
 
     companion object {
-        const val SPLASH_TIME_OUT = 1000
+        const val SPLASH_TIME_OUT = 800
     }
 }
