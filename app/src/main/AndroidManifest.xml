@@ -4,6 +4,7 @@
     package="com.example.carshowroom">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -16,21 +17,25 @@
         android:theme="@style/Theme.CarShowroom"
         tools:targetApi="31">
         <activity
+            android:name=".CarInfoActivity"
+            android:theme="@style/Theme.CarShowroom.ActionBar"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false"
             android:label="@string/title_activity_main"
-            android:theme="@style/Theme.CarShowroom.NoActionBar" />
+            android:theme="@style/Theme.CarShowroom" />
         <activity
-            android:name=".ForgotPasswordActivity"
+            android:name=".auth.ForgotPasswordActivity"
             android:exported="false" />
         <activity
             android:name=".UserActivity"
             android:exported="false" />
         <activity
-            android:name=".SignInActivity"
+            android:name=".auth.SignInActivity"
             android:exported="false" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".auth.SignUpActivity"
             android:exported="false" />
         <activity
             android:name=".SplashScreen"

@@ -1,9 +1,10 @@
-package com.example.carshowroom
+package com.example.carshowroom.auth
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.carshowroom.MainActivity
 import com.example.carshowroom.databinding.ActivitySignInBinding
 import com.google.firebase.auth.FirebaseAuth
 

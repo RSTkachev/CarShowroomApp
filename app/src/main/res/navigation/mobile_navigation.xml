@@ -18,8 +18,8 @@
         tools:layout="@layout/fragment_message_centre" />
 
     <fragment
-        android:id="@+id/nav_favorite"
-        android:name="com.example.carshowroom.ui.favorite.FavoriteCarsFragment"
-        android:label="Избранное"
-        tools:layout="@layout/fragment_favorite_cars" />
+        android:id="@+id/nav_contact"
+        android:name="com.example.carshowroom.ui.contact.ContactFragment"
+        android:label="Наши контакты"
+        tools:layout="@layout/fragment_contact" />
 </navigation>

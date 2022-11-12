@@ -1,4 +1,4 @@
-package com.example.carshowroom
+package com.example.carshowroom.auth
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

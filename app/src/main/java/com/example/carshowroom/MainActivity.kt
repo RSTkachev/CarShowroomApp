@@ -12,6 +12,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import com.example.carshowroom.auth.SignInActivity
 import com.example.carshowroom.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_cars, R.id.nav_messages, R.id.nav_favorite
+                R.id.nav_cars, R.id.nav_messages, R.id.nav_contact
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

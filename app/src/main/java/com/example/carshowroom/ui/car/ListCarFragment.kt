@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.carshowroom.Car
+import com.example.carshowroom.CarData
 import com.example.carshowroom.MyAdapter
 import com.example.carshowroom.databinding.FragmentListCarBinding
 import com.google.firebase.database.*
@@ -18,7 +18,7 @@ class ListCarFragment : Fragment() {
 
     private lateinit var dbRef : DatabaseReference
     private lateinit var  carRecyclerView: RecyclerView
-    private lateinit var carArrayList: ArrayList<Car>
+    private lateinit var carArrayList: ArrayList<CarData>
 
     private val binding get() = _binding!!
 
@@ -36,7 +36,7 @@ class ListCarFragment : Fragment() {
         carRecyclerView.layoutManager = LinearLayoutManager(context)
         carRecyclerView.setHasFixedSize(true)
 
-        carArrayList = arrayListOf<Car>()
+        carArrayList = arrayListOf<CarData>()
         getUserData()
 
 
@@ -55,12 +55,11 @@ class ListCarFragment : Fragment() {
 
                     for (carSnapshot in snapshot.children) {
 
-                        val car = carSnapshot.getValue(Car::class.java)
+                        val car = carSnapshot.getValue(CarData::class.java)
                         carArrayList.add(car!!)
 
                     }
-
-                    carRecyclerView.adapter = MyAdapter(carArrayList)
+                    carRecyclerView.adapter = MyAdapter(context!!, carArrayList)
                 }
 
             }

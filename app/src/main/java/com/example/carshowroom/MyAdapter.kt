@@ -1,5 +1,8 @@
 package com.example.carshowroom
 
+import android.content.Context
+import android.content.Intent
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +11,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class MyAdapter(private val carList : ArrayList<Car>,) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
+class MyAdapter(
+    var c: Context, private val carList : ArrayList<CarData>,) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -16,6 +20,8 @@ class MyAdapter(private val carList : ArrayList<Car>,) : RecyclerView.Adapter<My
 
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.car_list_item,
         parent, false)
+
+
         return MyViewHolder(itemView)
     }
 
@@ -29,7 +35,19 @@ class MyAdapter(private val carList : ArrayList<Car>,) : RecyclerView.Adapter<My
         holder.carMileage.text = currentItem.carMileage
         holder.ownerCount.text = currentItem.ownerCount
         holder.carEngine.text = currentItem.carEngine
-
+        holder.itemView.setOnClickListener() {
+            val bundle: Bundle = Bundle()
+            bundle.putString("name", currentItem.carName)
+            bundle.putString("price", currentItem.carPrice)
+            bundle.putString("mileage", currentItem.carMileage)
+            bundle.putString("owner", currentItem.ownerCount)
+            bundle.putString("engine", currentItem.carEngine)
+            bundle.putString("image", currentItem.carImage)
+            bundle.putString("description", currentItem.carDescription)
+            val mIntent = Intent(holder.itemView.context, CarInfoActivity::class.java)
+            mIntent.putExtras(bundle)
+            c.startActivity(mIntent)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -39,6 +57,7 @@ class MyAdapter(private val carList : ArrayList<Car>,) : RecyclerView.Adapter<My
 
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
 
         val carName : TextView = itemView.findViewById(R.id.name_car)
         val carPrice : TextView = itemView.findViewById(R.id.price)
