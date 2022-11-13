@@ -42,7 +42,6 @@ class SignInActivity : AppCompatActivity() {
                                 startActivity(intent)
                             }
                             else {
-                                firebaseAuth.currentUser?.sendEmailVerification()
                                 Toast.makeText(this, "Подтвердите адрес электронной почты", Toast.LENGTH_SHORT).show()
                             }
                         }
@@ -56,5 +55,11 @@ class SignInActivity : AppCompatActivity() {
                 Toast.makeText(this, "Заполните поля", Toast.LENGTH_SHORT).show()
             }
         }
+        val actionBar = supportActionBar
+        actionBar!!.setDisplayHomeAsUpEnabled(true)
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        super.onBackPressed()
+        return true
     }
 }

@@ -14,31 +14,42 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.CarShowroom"
+        android:theme="@style/Theme.CarShowroom.ActionBar"
         tools:targetApi="31">
         <activity
             android:name=".CarInfoActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.CarShowroom.ActionBar"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:exported="false"
             android:label="@string/title_activity_main"
             android:theme="@style/Theme.CarShowroom" />
         <activity
             android:name=".auth.ForgotPasswordActivity"
-            android:exported="false" />
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:label="Смена пароля"/>
         <activity
             android:name=".UserActivity"
-            android:exported="false" />
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:label="Аккаунт"/>
         <activity
             android:name=".auth.SignInActivity"
-            android:exported="false" />
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:label="Авторизация"/>
         <activity
             android:name=".auth.SignUpActivity"
-            android:exported="false" />
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:label="Регистрация"/>
         <activity
             android:name=".SplashScreen"
+            android:screenOrientation="portrait"
             android:exported="true"
             android:theme="@style/Theme.SplashScreen">
             <intent-filter>

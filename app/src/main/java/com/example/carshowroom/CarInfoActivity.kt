@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toolbar
 import com.bumptech.glide.Glide
 
 class CarInfoActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_car_info)
@@ -32,6 +34,7 @@ class CarInfoActivity : AppCompatActivity() {
 
         image.clipToOutline = true
         Glide.with(this).load(b.getString("image")).into(image)
+
     }
 
     override fun onSupportNavigateUp(): Boolean {

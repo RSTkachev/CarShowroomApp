@@ -12,12 +12,6 @@
         tools:layout="@layout/fragment_list_car" />
 
     <fragment
-        android:id="@+id/nav_messages"
-        android:name="com.example.carshowroom.ui.message.MessageCentreFragment"
-        android:label="Сообщения"
-        tools:layout="@layout/fragment_message_centre" />
-
-    <fragment
         android:id="@+id/nav_contact"
         android:name="com.example.carshowroom.ui.contact.ContactFragment"
         android:label="Наши контакты"

@@ -38,5 +38,11 @@ class ForgotPasswordActivity : AppCompatActivity() {
                 Toast.makeText(this, "Заполните поле Email", Toast.LENGTH_SHORT).show()
             }
         }
+        val actionBar = supportActionBar
+        actionBar!!.setDisplayHomeAsUpEnabled(true)
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        super.onBackPressed()
+        return true
     }
 }

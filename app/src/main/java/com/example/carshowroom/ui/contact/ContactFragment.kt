@@ -28,14 +28,12 @@ class ContactFragment : Fragment() {
         binding.loc.clipToOutline = true
 
         binding.loc.setOnClickListener() {
-            val pm : PackageManager
             val gmmIntentUri = Uri.parse("geo:47.203107298160376, 38.93437261617795?q=Корпус Г")
             val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
             mapIntent.setPackage("com.google.android.apps.maps")
             startActivity(mapIntent)
         }
         binding.locText.setOnClickListener() {
-            val pm : PackageManager
             val gmmIntentUri = Uri.parse("geo:47.203107298160376, 38.93437261617795?q=Корпус Г")
             val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
             mapIntent.setPackage("com.google.android.apps.maps")

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -15,12 +16,16 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.carshowroom.auth.SignInActivity
 import com.example.carshowroom.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.*
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var firebaseUser : FirebaseUser
+    private lateinit var reference: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_cars, R.id.nav_messages, R.id.nav_contact
+                R.id.nav_cars, R.id.nav_contact
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -49,8 +54,28 @@ class MainActivity : AppCompatActivity() {
 
         var textView: TextView? = headerView?.findViewById(R.id.account_info)
 
+        reference = FirebaseDatabase.getInstance().getReference("Users")
+
         if (firebaseAuth.currentUser != null) {
+
+            val userID : String = firebaseAuth.currentUser!!.uid
             textView?.text = "Мой аккаунт"
+            reference.child(userID).addListenerForSingleValueEvent(object  : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    if (snapshot.exists()) {
+                        val userProfile : UserData = snapshot.getValue(UserData::class.java)!!
+                        textView?.text = userProfile.fullName
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    Toast.makeText(this@MainActivity, "Что-то пошло не так", Toast.LENGTH_SHORT).show()
+                }
+
+            })
+        }
+        else {
+            textView?.text = "Войти или зарегистрироваться"
         }
 
 

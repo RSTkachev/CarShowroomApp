@@ -2,21 +2,26 @@
     <!-- Base application theme. -->
     <style name="Theme.CarShowroom" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#5EBA7D</item>
-        <item name="colorPrimaryVariant">#5EBA7D</item>
+        <item name="colorPrimary">#3DDC84</item>
+        <item name="colorPrimaryVariant">#3DDC84</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorSecondary">#3DDC84</item>
+        <item name="colorSecondaryVariant">#3DDC84</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorOnPrimary</item>
+        <item name="android:statusBarColor">#121212</item>
         <!-- Customize your theme here. -->
     </style>
 
 
-    <style name="Theme.CarShowroom.NoActionBar" parent="Theme.CarShowroom">
+    <style name="Theme.CarShowroom.ActionBar" parent="Theme.CarShowroom">
         <item name="windowActionBar">true</item>
         <item name="windowNoTitle">false</item>
+    </style>
+
+
+    <style name="Theme.SplashScreen" parent="Theme.CarShowroom">
+        <item name="android:statusBarColor">#121212</item>
     </style>
 </resources>
