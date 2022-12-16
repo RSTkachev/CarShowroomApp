@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.carshowroom.CarData
-import com.example.carshowroom.MyAdapter
 import com.example.carshowroom.databinding.FragmentListCarBinding
 import com.google.firebase.database.*
 
@@ -37,6 +36,7 @@ class ListCarFragment : Fragment() {
         carRecyclerView.setHasFixedSize(true)
 
         carArrayList = arrayListOf<CarData>()
+        carRecyclerView.adapter = context?.let { ListCarFragmentAdapter(it, carArrayList) }
         getUserData()
 
 
@@ -52,14 +52,14 @@ class ListCarFragment : Fragment() {
             override fun onDataChange(snapshot: DataSnapshot) {
 
                 if (snapshot.exists()) {
-
+                    carArrayList.clear()
                     for (carSnapshot in snapshot.children) {
 
                         val car = carSnapshot.getValue(CarData::class.java)
                         carArrayList.add(car!!)
 
                     }
-                    carRecyclerView.adapter = MyAdapter(context!!, carArrayList)
+                    carRecyclerView.adapter = ListCarFragmentAdapter(context!!, carArrayList)
                 }
 
             }

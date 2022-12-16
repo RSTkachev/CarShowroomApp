@@ -3,6 +3,7 @@ package com.example.carshowroom.auth
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import com.example.carshowroom.UserData
 import com.example.carshowroom.databinding.ActivitySignUpBinding
@@ -50,9 +51,22 @@ class SignUpActivity : AppCompatActivity() {
 
                             firebaseAuth.signOut()
                             val intSignIn = Intent(this, SignInActivity::class.java)
+                            intSignIn.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
                             startActivity(intSignIn)
                         } else {
-                            Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
+                            Log.i("firebaseAuth", it.exception.toString())
+                            if (it.exception.toString().equals("com.google.firebase.auth.FirebaseAuthInvalidCredentialsException: " +
+                                        "The email address is badly formatted.")) {
+                                Toast.makeText(this, "Некорректный email", Toast.LENGTH_SHORT).show()
+                            }
+                            else if (it.exception.toString().equals("com.google.firebase.auth.FirebaseAuthUserCollisionException:" +
+                                        " The email address is already in use by another account.")) {
+                                    Toast.makeText(this, "Пользователь с данным email уже существует", Toast.LENGTH_LONG).show()
+                                }
+                            else if (it.exception.toString().equals("com.google.firebase.auth.FirebaseAuthWeakPasswordException: " +
+                                        "The given password is invalid. [ Password should be at least 6 characters ]")) {
+                                Toast.makeText(this, "Пароль слишком простой", Toast.LENGTH_SHORT).show()
+                            }
                         }
                     }
                 }

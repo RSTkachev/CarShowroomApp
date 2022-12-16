@@ -1,4 +1,4 @@
-package com.example.carshowroom
+package com.example.carshowroom.ui.car
 
 import android.content.Context
 import android.content.Intent
@@ -10,15 +10,19 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.carshowroom.CarData
+import com.example.carshowroom.CarInfoActivity
+import com.example.carshowroom.R
 
-class MyAdapter(
-    var c: Context, private val carList : ArrayList<CarData>,) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
+class ListCarFragmentAdapter(
+    var c: Context, private val carList : ArrayList<CarData>,) : RecyclerView.Adapter<ListCarFragmentAdapter.MyViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
 
 
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.car_list_item,
+        val itemView = LayoutInflater.from(parent.context).inflate(
+            R.layout.car_list_item,
         parent, false)
 
 

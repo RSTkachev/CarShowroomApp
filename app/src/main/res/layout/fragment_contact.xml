@@ -46,6 +46,31 @@
 
 
     <ImageView
+        android:id="@+id/schedule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/schedule"
+        android:layout_marginEnd="3dp"
+        app:layout_constraintEnd_toStartOf="@id/opening_hours"
+        app:layout_constraintTop_toBottomOf="@id/loc_text" />
+
+
+    <TextView
+        android:id="@+id/opening_hours"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:textSize="20sp"
+        android:text="Пн-Вс 10:00-21:00"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="27dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loc_text" />
+
+
+    <ImageView
         android:id="@+id/phone_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -54,7 +79,7 @@
         android:src="@drawable/phone"
         android:layout_marginEnd="3dp"
         app:layout_constraintEnd_toStartOf="@id/phone"
-        app:layout_constraintTop_toBottomOf="@id/loc_icon" />
+        app:layout_constraintTop_toBottomOf="@id/opening_hours" />
 
 
     <TextView
@@ -67,5 +92,5 @@
         android:layout_marginStart="27dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/loc_text" />
+        app:layout_constraintTop_toBottomOf="@id/opening_hours" />
 </androidx.constraintlayout.widget.ConstraintLayout>
