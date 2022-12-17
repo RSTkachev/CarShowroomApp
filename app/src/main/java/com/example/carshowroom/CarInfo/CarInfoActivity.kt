@@ -2,9 +2,12 @@ package com.example.carshowroom.CarInfo
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.HorizontalScrollView
-import android.widget.ImageView
-import android.widget.TextView
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
+import android.widget.*
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -17,6 +20,7 @@ class CarInfoActivity : AppCompatActivity() {
 
     private lateinit var  carRecyclerView: RecyclerView
     var adapter: CarInfoActivityImageAdapter? = null
+    var isModerator : Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,9 +36,11 @@ class CarInfoActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.info_engine).text = car.carEngine
         findViewById<TextView>(R.id.info_description).text = car.carDescription
 
-        val actionBar = supportActionBar
-        actionBar!!.title = car.carName
-        actionBar.setDisplayHomeAsUpEnabled(true)
+
+        setSupportActionBar(findViewById(R.id.my_toolbar))
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = car.carName
+
         val imageList : ArrayList<String> = arrayListOf<String>()
         for (i in range(1, car.carImage?.size!!)) {
             imageList += car.carImage?.get(i)!!.toString()
@@ -44,13 +50,33 @@ class CarInfoActivity : AppCompatActivity() {
         carRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         carRecyclerView.setHasFixedSize(true)
 
-        val scrollToPosition = 50
         adapter = CarInfoActivityImageAdapter(imageList)
         carRecyclerView.adapter = adapter
     }
 
+
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
+    }
+
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater : MenuInflater = menuInflater
+        if (isModerator) {
+            inflater.inflate(R.menu.car_info_toolbar, menu)
+        }
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        R.id.change_car_data -> {
+            Toast.makeText(this@CarInfoActivity, "It's work!", Toast.LENGTH_SHORT).show()
+            true
+        }
+
+        else -> {
+            super.onOptionsItemSelected(item)
+        }
     }
 }

@@ -20,7 +20,7 @@
             android:name=".CarInfo.CarInfoActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.CarShowroom.ActionBar" />
+            android:theme="@style/Theme.CarShowroom" />
         <activity
             android:name=".MainActivity"
             android:exported="false"

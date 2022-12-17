@@ -8,6 +8,8 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/drawable-night/ic_location.xml" value="0.305" />
         <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/drawable-night/ic_money.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/drawable-night/ic_owner.xml" value="0.199" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/drawable-night/ic_pencil.xml" value="0.2135" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/drawable-night/ic_tire.xml" value="0.2135" />
         <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/drawable-night/icon.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/drawable-night/logo.xml" value="0.33" />
         <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/drawable-night/phone.xml" value="0.2455" />
@@ -16,6 +18,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/drawable-v24/logo.xml" value="0.33" />
         <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/drawable-v24/shape_background.xml" value="0.2465" />
         <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/drawable/account.xml" value="0.2995" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/drawable/button_background.xml" value="0.2135" />
         <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/drawable/cayman.xml" value="0.2995" />
         <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.2465" />
         <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/drawable/ic_baseline_directions_car_24.xml" value="0.2995" />
@@ -33,11 +36,13 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/drawable/ic_message.xml" value="0.187" />
         <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/drawable/ic_money.xml" value="0.199" />
         <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/drawable/ic_owner.xml" value="0.199" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/drawable/ic_pencil.xml" value="0.2135" />
         <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/drawable/ic_tire.xml" value="0.199" />
         <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/drawable/ic_user.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/drawable/icon.xml" value="0.317" />
         <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/drawable/icon_back.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/drawable/image_background.xml" value="0.1885" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/drawable/logo.xml" value="0.2135" />
         <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/drawable/phone.xml" value="0.208" />
         <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/drawable/schedule.xml" value="0.317" />
         <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/drawable/side_nav_bar.xml" value="0.266" />
@@ -70,6 +75,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/layout/recycler_view_item.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/layout/test.xml" value="0.23958333333333334" />
         <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/menu/activity_main_drawer.xml" value="0.2609375" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/menu/car_info_toolbar.xml" value="0.2" />
         <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/menu/drawer_menu.xml" value="0.2598958333333333" />
         <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/menu/main.xml" value="0.2609375" />
         <entry key="..\:/Users/User/AndroidStudioProjects/CarShowroom/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2995" />

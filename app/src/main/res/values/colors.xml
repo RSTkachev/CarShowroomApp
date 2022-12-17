@@ -10,4 +10,5 @@
     <color name="myGreen">#B33DDC84</color>
     <color name="cardViewColor">#F3F2F7</color>
     <color name="toolbarColor">#3DDC84</color>
+    <color name="buttonColor">#3DDC84</color>
 </resources>

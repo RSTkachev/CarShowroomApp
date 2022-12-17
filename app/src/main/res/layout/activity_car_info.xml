@@ -6,17 +6,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginBottom="10dp"
-    android:layout_marginTop="10dp"
     tools:context=".CarInfo.CarInfoActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:title="Название автомобиля"
+        app:menu="@menu/car_info_toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/toolbarColor"
+        android:theme="@style/Theme.CarShowroom"
+        app:popupTheme="@style/Theme.CarShowroom"/>
 
 
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/my_toolbar"
         app:layout_constraintBottom_toBottomOf="parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout

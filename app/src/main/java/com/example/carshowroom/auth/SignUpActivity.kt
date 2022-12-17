@@ -36,7 +36,7 @@ class SignUpActivity : AppCompatActivity() {
                 if (age != null && age > 0) {
                     firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {
                         if (it.isSuccessful) {
-                            val user: UserData = UserData(name, age, email)
+                            val user: UserData = UserData(name, age, email, 0)
 
                             firebaseAuth.currentUser?.sendEmailVerification()
                             FirebaseDatabase.getInstance().getReference("Users")
