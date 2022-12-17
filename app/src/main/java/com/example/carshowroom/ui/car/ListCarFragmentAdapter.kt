@@ -11,7 +11,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.carshowroom.CarData
-import com.example.carshowroom.CarInfoActivity
+import com.example.carshowroom.CarInfo.CarInfoActivity
 import com.example.carshowroom.R
 
 class ListCarFragmentAdapter(
@@ -32,7 +32,7 @@ class ListCarFragmentAdapter(
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
         val currentItem = carList[position]
-        Glide.with(holder.itemView).load(carList[position].carImage).into(holder.carImage)
+        Glide.with(holder.itemView).load(carList[position].carImage?.get(1)).into(holder.carImage)
         holder.carImage.clipToOutline = true
         holder.carName.text = currentItem.carName
         holder.carPrice.text = currentItem.carPrice
@@ -41,13 +41,7 @@ class ListCarFragmentAdapter(
         holder.carEngine.text = currentItem.carEngine
         holder.itemView.setOnClickListener() {
             val bundle: Bundle = Bundle()
-            bundle.putString("name", currentItem.carName)
-            bundle.putString("price", currentItem.carPrice)
-            bundle.putString("mileage", currentItem.carMileage)
-            bundle.putString("owner", currentItem.ownerCount)
-            bundle.putString("engine", currentItem.carEngine)
-            bundle.putString("image", currentItem.carImage)
-            bundle.putString("description", currentItem.carDescription)
+            bundle.putSerializable("car", currentItem);
             val mIntent = Intent(holder.itemView.context, CarInfoActivity::class.java)
             mIntent.putExtras(bundle)
             c.startActivity(mIntent)

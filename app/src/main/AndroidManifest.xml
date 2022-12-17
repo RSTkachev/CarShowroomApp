@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.carshowroom">
+    package="com.example.carshowroom" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
@@ -15,43 +15,43 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CarShowroom.ActionBar"
-        tools:targetApi="31">
+        tools:targetApi="31" >
         <activity
-            android:name=".CarInfoActivity"
+            android:name=".CarInfo.CarInfoActivity"
+            android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.CarShowroom.ActionBar"
-            android:exported="false" />
+            android:theme="@style/Theme.CarShowroom.ActionBar" />
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait"
             android:exported="false"
             android:label="@string/title_activity_main"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.CarShowroom" />
         <activity
             android:name=".auth.ForgotPasswordActivity"
-            android:screenOrientation="portrait"
             android:exported="false"
-            android:label="Смена пароля"/>
+            android:label="Смена пароля"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".UserActivity"
-            android:screenOrientation="portrait"
             android:exported="false"
-            android:label="Аккаунт"/>
+            android:label="Аккаунт"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".auth.SignInActivity"
-            android:screenOrientation="portrait"
             android:exported="false"
-            android:label="Авторизация"/>
+            android:label="Авторизация"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".auth.SignUpActivity"
-            android:screenOrientation="portrait"
             android:exported="false"
-            android:label="Регистрация"/>
+            android:label="Регистрация"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SplashScreen"
-            android:screenOrientation="portrait"
             android:exported="true"
-            android:theme="@style/Theme.SplashScreen">
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.SplashScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
